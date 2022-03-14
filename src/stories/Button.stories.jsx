@@ -34,3 +34,11 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  primary: true,
+  disabled: true,
+  label: 'Button',
+};
