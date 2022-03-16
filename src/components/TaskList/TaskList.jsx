@@ -1,6 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Task, TaskState } from './Task';
+import { Task, TaskState } from './../Task';
+import { LoadingTasks } from './LoadingTasks';
+import { EmptyTasksList } from './EmptyTasksList';
 
 export const TaskList = ({ tasks, loading, onPinTask, onArchiveTask }) => {
   const sortedTasks = React.useMemo(() => {
@@ -15,7 +17,7 @@ export const TaskList = ({ tasks, loading, onPinTask, onArchiveTask }) => {
   }
 
   if (!tasks || tasks.length === 0) {
-    return <EmptyList />;
+    return <EmptyTasksList />;
   }
 
   return (
@@ -46,38 +48,4 @@ TaskList.propTypes = {
 TaskList.defaultProps = {
   loading: false,
   tasks: [],
-};
-
-const LoadingTasks = () => {
-  const LoadingRow = (
-    <div className="loading-item">
-      <span className="glow-checkbox" />
-      <span className="glow-text">
-        <span>Loading</span> <span>cool</span> <span>state</span>
-      </span>
-    </div>
-  );
-
-  return (
-    <div className="list-items" data-testid="loading" key={'loading'}>
-      {LoadingRow}
-      {LoadingRow}
-      {LoadingRow}
-      {LoadingRow}
-      {LoadingRow}
-      {LoadingRow}
-    </div>
-  );
-};
-
-const EmptyList = () => {
-  return (
-    <div className="list-items" key={'empty'} data-testid="empty">
-      <div className="wrapper-message">
-        <span className="icon-check" />
-        <div className="title-message">You have no tasks</div>
-        <div className="subtitle-message">Sit back and relax</div>
-      </div>
-    </div>
-  );
 };
