@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Task, TaskState } from './MyTask';
+import { Task, TaskState } from './Task';
 
 export const TaskList = ({ tasks, loading, onPinTask, onArchiveTask }) => {
   const sortedTasks = React.useMemo(() => {

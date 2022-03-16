@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 
 import * as TaskListStories from './TaskList.stories';
-import { TaskState } from './MyTask';
+import { TaskState } from './Task';
 
 const { Pinned } = composeStories(TaskListStories);
 
