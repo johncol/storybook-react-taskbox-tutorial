@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 export const TaskState = {
   Inbox: 'TASK_INBOX',
-  Archvied: 'TASK_ARCHIVED',
+  Archived: 'TASK_ARCHIVED',
   Pinned: 'TASK_PINNED',
 };
 
 export const Task = ({ task, onArchiveTask, onPinTask }) => {
   const { id, title, state } = task;
-  const isArchived = state === TaskState.Archvied;
+  const isArchived = state === TaskState.Archived;
   return (
     <div className={`list-item ${state}`}>
       <label className="checkbox">
@@ -35,7 +35,10 @@ export const Task = ({ task, onArchiveTask, onPinTask }) => {
         />
       </div>
 
-      <div className="actions" onClick={(event) => event.preventPropagation()}>
+      <div
+        className="actions"
+        onClick={(e) => e.preventPropagation && e.preventPropagation()}
+      >
         {!isArchived && (
           <a onClick={() => onPinTask(id)}>
             <span

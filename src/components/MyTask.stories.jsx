@@ -19,6 +19,8 @@ Default.args = {
     state: TaskState.Inbox,
     updatedAt: new Date(2022, 2, 13, 19, 0, 0),
   },
+  onPinTask: () => {},
+  onArchiveTask: () => {},
 };
 
 export const Pinned = Template.bind({});
@@ -33,6 +35,6 @@ export const Archived = Template.bind({});
 Archived.args = {
   task: {
     ...Default.args.task,
-    state: TaskState.Archvied,
+    state: TaskState.Archived,
   },
 };
