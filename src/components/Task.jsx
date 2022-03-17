@@ -13,39 +13,22 @@ export const Task = ({ task, onArchiveTask, onPinTask }) => {
   return (
     <div className={`list-item ${state}`}>
       <label className="checkbox">
-        <input
-          type="checkbox"
-          defaultChecked={isArchived}
-          disabled={true}
-          name="checked"
-        />
+        <input type="checkbox" defaultChecked={isArchived} disabled={true} name="checked" />
         <span
           className="checkbox-custom"
-          onClick={() => onArchiveTask(id)}
+          onClick={() => onArchiveTask(task)}
           id={`archiveTask-${id}`}
           aria-label={`archiveTask-${id}`}
         />
       </label>
       <div className="title">
-        <input
-          type="text"
-          value={`${title}`}
-          readOnly={true}
-          placeholder="Input title"
-        />
+        <input type="text" value={`${title}`} readOnly={true} placeholder="Input title" />
       </div>
 
-      <div
-        className="actions"
-        onClick={(e) => e.preventPropagation && e.preventPropagation()}
-      >
+      <div className="actions" onClick={(e) => e.preventPropagation && e.preventPropagation()}>
         {!isArchived && (
-          <a onClick={() => onPinTask(id)}>
-            <span
-              className="icon-star"
-              id={`pinTask-${id}`}
-              aria-label={`pinTask-${id}`}
-            />
+          <a onClick={() => onPinTask(task)}>
+            <span className="icon-star" id={`pinTask-${id}`} aria-label={`pinTask-${id}`} />
           </a>
         )}
       </div>
