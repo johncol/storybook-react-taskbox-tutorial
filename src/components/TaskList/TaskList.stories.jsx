@@ -8,7 +8,7 @@ import * as TaskStories from './../Task/Task.stories';
 import { TaskState } from './../TaskState';
 import { TaskSliceCreator } from '../../lib/taskbox';
 
-const storiesDefaultState = {
+export const storiesDefaultState = {
   tasks: [
     { ...TaskStories.Default.args.task, id: '1', title: 'Task 1' },
     { ...TaskStories.Default.args.task, id: '2', title: 'Task 2' },

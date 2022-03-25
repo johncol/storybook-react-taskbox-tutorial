@@ -49,9 +49,9 @@ export const TaskSliceCreator = (initialState) => () =>
           state.error = null;
           state.tasks = [];
         })
-        .addCase(fetchTasks.rejected, (state, action) => {
+        .addCase(fetchTasks.rejected, (state) => {
           state.status = 'failed';
-          state.error = action.payload;
+          state.error = 'Error while fetching tasks';
           state.tasks = [];
         })
         .addCase(fetchTasks.fulfilled, (state, action) => {
