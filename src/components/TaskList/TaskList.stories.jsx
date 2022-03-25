@@ -33,6 +33,7 @@ export default {
   component: TaskList,
   title: 'TaskList',
   decorators: [(story) => <div style={{ padding: '3em' }}>{story()}</div>],
+  excludeStories: /.*storiesDefaultState$/,
 };
 
 const Template = (props) => <TaskList {...props} />;
