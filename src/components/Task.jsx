@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-export const TaskState = {
-  Inbox: 'TASK_INBOX',
-  Archived: 'TASK_ARCHIVED',
-  Pinned: 'TASK_PINNED',
-};
+import { TaskState } from './TaskState';
 
 export const Task = ({ task, onArchiveTask, onPinTask }) => {
   const { id, title, state } = task;

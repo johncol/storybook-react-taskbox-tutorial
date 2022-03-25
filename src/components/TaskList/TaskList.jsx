@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { LoadingTasks } from './LoadingTasks';
 import { EmptyTasksList } from './EmptyTasksList';
-import { Task, TaskState } from './../Task';
+import { Task } from './../Task';
+import { TaskState } from './../TaskState';
 import { updateTaskState } from '../../lib/taskbox';
 
 export const TaskList = () => {

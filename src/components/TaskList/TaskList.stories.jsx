@@ -5,7 +5,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { TaskList } from './TaskList';
 
 import * as TaskStories from './../Task.stories';
-import { TaskState } from './../Task';
+import { TaskState } from './../TaskState';
 import { TaskSliceCreator } from '../../lib/taskbox';
 
 const storiesDefaultState = {

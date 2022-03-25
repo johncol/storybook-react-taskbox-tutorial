@@ -1,5 +1,6 @@
 import React from 'react';
-import { Task, TaskState } from './Task';
+import { Task } from './Task';
+import { TaskState } from './TaskState';
 
 const TaskStories = {
   component: Task,
