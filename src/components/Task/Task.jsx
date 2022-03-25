@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TaskState } from './TaskState';
+import { TaskState } from './../TaskState';
 
 export const Task = ({ task, onArchiveTask, onPinTask }) => {
   const { id, title, state } = task;
